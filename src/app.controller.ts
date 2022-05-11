@@ -12,6 +12,8 @@ export class AppController {
 
     // return await this.appService.updateUser('admin1',1);
 
-    return await this.appService.getAll();
+    // return await this.appService.getAll();
+
+    return await this.appService.getAllPetsByUser();
   }
 }

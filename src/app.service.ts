@@ -9,6 +9,11 @@ export class AppService {
     @InjectRepository(User) private userRepository :Repository<User>
   ){}
   
+  getAllPetsByUser(): Promise<User[]>{
+    return this.userRepository.find({
+      relations:['pet']
+    });
+  }
   
   getAll(): Promise<User[]>{
     return this.userRepository.find();

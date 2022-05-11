@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import config from  '../ormconfig';
 import { User } from './user.entity';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { User } from './user.entity';
     ),
     TypeOrmModule.forFeature([
       User
-    ])
+    ]),
+    UserModule
   ],
   controllers: [AppController],
   providers: [AppService],
